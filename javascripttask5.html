@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form With Validation</title>
+    <style>
+        body {
+            padding: 50px 10px;
+        }
+
+        .formdesign {
+            font-size: 20px;
+        }
+
+        .formdesign input {
+            width: 45%;
+            padding: 12px 20px;
+            border: 1px solid blue;
+            margin: 14px;
+            border-radius: 4px;
+            font: size 25px;
+            ;
+        }
+
+        .formerror {
+            color: red;
+        }
+
+        .button {
+            border-radius: 9px;
+            width: 120px;
+            height: 50px;
+            font-size: 23px;
+
+        }
+        #messagess{
+            width: 619px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <center>
+        <form name="myForm" onsubmit="return validateForm()" method="post">
+            <div class="formdesign" id="name">
+                Name:<input type="text" name="fname" >
+                <b>
+                    <span class="formerror"></span></b>
+            </div>
+            <div class="formdesign" id="email">
+                Email:<input type="email" name="femail">
+                <b>
+                    <span class="formerror"></span></b>
+            </div>
+            <div class="formdesign" id="website">
+                Website:<input type="text" name="fwebsite">
+                <b><span class=" formerror"></span></b>
+            </div>
+            <div class="formdesign" id="message">
+                Message:<input type="text" name="fmessage" id="messagess">
+                <b>
+                    <span class="formerror"></span></b>
+            </div>
+           
+
+            <input class="button" type="submit" value="Submit">
+        </form>
+        <br>
+        <br>
+        <br>
+        
+        
+        <a href="./index2.html"><p align="center">Go to Index page</p></a>
+
+    </center>
+
+
+    <script>
+
+        function clearErrors(){
+            errors = document.getElementsByClassName('formerror');
+            for (let item of errors) {
+                item.innerHTML = "";
+            }
+        }
+
+        function seterror(id, error) {
+            element = document.getElementById(id);
+            element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+        }
+
+        function validateForm() {
+            var returnVal = true;
+            clearErrors();
+            
+            var name = document.forms['myForm']["fname"].value;
+            if (name.length == 0) {
+                seterror("name", "*This field is required!");
+                returnVal = false;
+            }
+
+            var email = document.forms['myForm']["femail"].value;
+            if (email.length > 15 || email.length==0) {
+                seterror("email", "*A valid email address is required!");
+                 returnVal = false;
+            }
+
+
+            var website = document.forms['myForm']["fwebsite"].value;
+            if (website.length <7 ) {
+                seterror("website", "*a valid url is required!");
+                returnVal = false;
+            }
+
+
+            var message = document.forms['myForm']["fmessage"].value;
+            if (message.length == 0) {
+                seterror("message", "*this field is required!");
+                returnVal = false;
+            }
+
+
+            return returnVal;
+        }
+    </script>
+
+
+
+
+
+</body>
+
+</html>

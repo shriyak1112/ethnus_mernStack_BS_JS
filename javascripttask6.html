@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        form {
+            background-color: rgb(248, 244, 244);
+            width: 388px;
+            height: 350px;
+        }
+
+        #i1 {
+            position: relative;
+            left: 10px;
+        }
+
+        .btn {
+            position: relative;
+            width: 100%;
+        }
+
+        .form-check {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px 10px;
+        }
+        .forgot-password {
+            text-align: right;
+            flex: 1; 
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <form action="https://www.instagram.com" onsubmit="return validate()" class="form m-5">
+            <table class="table table-borderless">
+                <img id="i1" src= "https://1000logos.net/wp-content/uploads/2017/02/Instagram-Logo-2010-2013.png" 
+                width="300px" height="90px"/>
+                <tr>
+                    <td>
+                        <p id="invalid-msg"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="px-4 ">
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" ><i
+                                    class="fa-solid fa-user"></i></span>
+                            <input class="form-control" type="text" id="un" placeholder="Username" required />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="px-4">
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" ><i
+                                    class="fa-solid fa-lock"></i></span>
+                            <input class="form-control" type="password" id="pwd" placeholder="Password" required />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center"><button type="submit" style="width: 355px;" class="my-2 btn btn-primary">Log
+                            in</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberMe" />
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                            <div class="forgot-password">
+                                <a href="https://www.instagram.com/accounts/password/reset/" class="kk text-primary text-decoration-none">Forgot Password?</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div>
+            <p>Don't have an account! <a href="https://www.instagram.com/accounts/emailsignup/" class="text-decoration-none">Sign up here</a></p>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        
+        
+        <a href="./index2.html"><p align="center">Go to Index page</p></a>
+    </center>
+    <script>
+        function validate() {
+            var un = document.getElementById("un").value;
+            var pwd = document.getElementById("pwd").value;
+            if (un.length < 5 || pwd.length < 5) {
+                document.getElementById("invalid-msg").innerHTML = <p class="alert alert-danger">Invalid username or password</p>;
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

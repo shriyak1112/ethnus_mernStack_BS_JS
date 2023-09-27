@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: rgb(21, 21, 236);
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+
+        }
+
+        table label {
+            display: inline-block;
+            width: 150px;
+            /* margin-left: 5px; */
+            text-align: right;
+            font-weight: 1000;
+            margin-top: 2px;
+            margin-bottom: 2px;
+
+
+        }
+
+        table {
+
+            border: none;
+            width: 900px;
+           
+
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        textarea {
+            width: 521px;
+            height: 123px;
+        }
+
+        #lastid {
+            text-align: right;
+        }
+
+        .btn {
+            position: relative;
+            left: 312px;
+            background-color: red;
+            width: 100px;
+            height: 30px;
+            color: white;
+            border-radius: 10px;
+        }
+
+        #grad {
+            background-image: linear-gradient(180deg, rgb(249, 255, 170), rgb(229, 157, 255));
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#"  onsubmit="return validate()">
+        <center>
+            <p>
+            <h1>Registration form</h1>
+            </p>
+            <div class="container" id="grad">
+                
+
+                <table cellspacing="8">
+
+                    <tbody>
+                        <tr>
+                            <td >
+                                <label>First Name</label>
+                            </td>
+                            <td onkeyup="firstname()"><input type="text" size="70" id="firstname" name="firstname" required>
+                            </td>
+                            <td id="fnvalid" style="color: red;"></td>
+
+                        </tr>
+                        <tr>
+                            <td >
+                                <label>Last Name</label>
+                            </td>
+                            <td onkeyup="lastname()"><input type="text" size="70" id="lastname" name="lastname" required></td>
+                            <td id="lnvalid" style="color: red;"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Email</label>
+                            </td>
+                            <td onkeyup="email()"><input type="email" size="70" id="email" name="email" required></td>
+                            <td id="mailvalid" style="color: red;"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Password</label>
+                            </td>
+                            <td onkeyup="password()"><input type="password" size="70" id="password" name="password" 
+                                    required>
+                                    <td id="pwdvalid" style="color: red;"></td>
+
+
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Re-enter Password</label>
+                            </td>
+                            <td  onkeyup="password2()"><input type="password" size="70" id="password2" name="password2" required>
+                            </td>
+                            <td id="rpwdvalid" style="color: red;"></td>
+
+
+                        </tr>
+                        <tr>
+                            <td><label for="Gender">Gender</label></td>
+                            <td>
+                                <input type="radio" name="Gender" id="Gender1" size="70">Male
+                                <br>
+                                <input type="radio" name="Gender" id="Gender2" size="70">Female
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Age</label>
+                            </td>
+                            <td onkeyup="age()"><input type="number" size="70" id="age" name="age" required>
+                            </td>
+                            <td id="agevalid" style="color: red;"></td>
+
+
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Phone number</label>
+                            </td>
+                            <td onkeyup="phone()"><input type="number" size="70" id="phone" name="phone" required></td>
+                            <td id="pvalid" style="color: red;"></td>
+
+
+                        </tr>
+                        <tr>
+                            <td><label>Address</label></td>
+                            
+                            <td onkeyup="address()">
+                                <textarea id="address"></textarea>
+                            </td>
+                            <td id="advalid" style="color: red;"></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>State</label>
+                            </td>
+                            <td onkeyup="state()"><input type="text" size="70" id="state" name="state" required></td>
+                            <td id="svalid" style="color: red;"></td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Country</label>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>Choose your country</option>
+                                    <option>India</option>
+                                    <option>USA</option>
+                                    <option>England</option>
+                                    <option>Germany</option>
+                                    <option>France</option>
+                                    <option>Canada</option>
+                                    <option>Sri lanka</option>
+                                    <option>Italy</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Languages known</label></td>
+                            <td>
+                                <input type="checkbox">English
+                                <input type="checkbox">Kannada
+                                <input type="checkbox">Hindi
+                                <input type="checkbox">Telugu
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="checkbox" required><b>I declare all the given details are
+                                    true</b></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" id="lastid">Log in to <a href="www.ethnus.com">Ethnus</a> Website</td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="2">
+                                <button class="btn" value="Register">Register</button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+
+                </table>
+                
+            </div>
+            <br>
+            <br>
+            <br>
+            
+            
+            <a href="./index2.html"><p align="center">Go to Index page</p></a>
+        </center>
+    </form>
+
+
+    <script>
+        function validate(){
+    if(firstname()&&lastname()&&email()&&password()&&password2()&&age()&&phone()&&address()&&state()){
+        return true;
+    }
+    else{
+       
+        return false;
+    }
+}
+
+function firstname(){
+    let firstname=document.getElementById("firstname").value;
+    if(firstname.length<3){
+        document.getElementById("fnvalid").innerText="Poor";
+        return false;
+    }
+    else if(firstname.length<5){
+        document.getElementById("fnvalid").innerText="weak";
+        return false;
+
+    }
+    else{
+        document.getElementById("fnvalid").innerText="Strong";
+        return true;
+    }
+}
+function lastname(){
+    let lastname=document.getElementById("lastname").value;
+    if(lastname.length<3){
+        document.getElementById("lnvalid").innerText="Poor";
+        return false;
+    }
+    else if(lastname.length<5){
+        document.getElementById("lnvalid").innerText="weak";
+        return false;
+
+    }
+    else{
+        document.getElementById("lnvalid").innerText="Strong";
+        return true;
+    }
+}
+function email(){
+    let email=document.getElementById("email").value;
+    if(email.length<5 || !email.includes('@')||!email.includes('.')){
+        document.getElementById("mailvalid").innerText="Poor";
+        return false;
+
+    }
+    else if(email.length<15 || !email.includes('@')||!email.includes('.')){
+        document.getElementById("mailvalid").innerText="weak";
+        return false;
+
+    }
+    else{
+        document.getElementById("mailvalid").innerText="Strong";
+        return true;
+
+    }
+}
+function password(){
+    var password=document.getElementById("password").value;
+    if(password.length<4){
+        document.getElementById("pwdvalid").innerText="Poor";
+        return false;
+
+    }
+    else if(password.length<8){
+        document.getElementById("pwdvalid").innerText="weak";
+        return false;
+
+    }
+    else{
+        document.getElementById("pwdvalid").innerText="Strong";
+        return true;
+    }
+}
+function password2(){
+    var password2=document.getElementById("password2").value;
+    var password=document.getElementById("password").value;
+    if(password2!=password){
+        document.getElementById('rpwdvalid').innerHTML="Poor or Mismatch";
+        return false;
+
+    }
+    else{
+        document.getElementById('rpwdvalid').innerHTML="Strong";
+        return true;
+    }
+}
+function age(){
+    var age=document.getElementById("age").value;
+    if(age>100){
+        document.getElementById('agevalid').innerHTML="Poor";
+        return false;
+    }
+    else{
+        document.getElementById('agevalid').innerHTML="Strong";
+        return true;
+    }
+}
+function phone(){
+    var phone=document.getElementById("phone").value;
+    if(phone.length!=10){
+        document.getElementById('pvalid').innerHTML="Poor";
+        return false;
+    }
+    else{
+        document.getElementById('pvalid').innerHTML="Strong";
+        return true;
+    }
+}
+function address(){
+    let address=document.getElementsByTagName("textarea")[0].value;
+    if(address.length<10){
+        document.getElementById("advalid").innerText="Poor";
+        return false;
+
+    }
+    else if(address.length<20){
+        document.getElementById("advalid").innerText="weak";
+        return false;
+
+    }
+    else{
+        document.getElementById("advalid").innerText="Strong";
+        return true;
+    }
+}
+function state(){
+    let state=document.getElementById("state").value;
+    if(state.length<3){
+        document.getElementById("svalid").innerText="Poor";
+        return false;
+
+    }
+    else{
+        document.getElementById("svalid").innerText="Strong";
+    
+        return true;
+    }
+}
+
+        
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

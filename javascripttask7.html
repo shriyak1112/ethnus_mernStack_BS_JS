@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form>
+        <img id="myimg" src="./train1.png" />
+        <center>
+            <p>Click the below buttons to start and stop the animation</p>
+            <input type="button" value="Start " onclick="startAnimation();" />
+            <input type="button" value="Stop " onclick="stopAnimation();" />
+
+            <br>
+            <br>
+            <br>
+            
+            
+            <a href="./index2.html"><p align="center">Go to Index page</p></a>
+
+          
+        </center>
+    </form>
+    <script type="text/javascript">
+        var img = null;
+        var animationInterval;
+
+        function init() {
+            img = document.getElementById('myimg');
+            img.style.position = 'relative';
+            img.style.left = '50px';
+        }
+
+        function moveRight() {
+            img.style.left = parseInt(img.style.left) + 100 + 'px';
+        }
+
+        function startAnimation() {
+            animationInterval = setInterval(moveRight, 1000); // Adjust the interval as needed
+        }
+
+        function stopAnimation() {
+            clearInterval(animationInterval);
+        }
+
+        window.onload = init;
+    </script>
+</body>
+
+</html>
